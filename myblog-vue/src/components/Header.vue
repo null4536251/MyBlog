@@ -8,11 +8,11 @@
       <div>{{user.username}}</div>
       <div class="maction">
         <span>
-          <el-link>主页</el-link>
+          <el-link @click="toIndex">主页</el-link>
         </span>
         <el-divider direction="vertical"></el-divider>
         <span>
-          <el-link type="success">发表博客</el-link>
+          <el-link type="success" @click="addBlog">发表博客</el-link>
         </span>
 
         <el-divider direction="vertical"></el-divider>
@@ -56,6 +56,12 @@ export default {
     },
     login () { //跳转登录页面进行登录
       this.$router.push("/login")
+    },
+    toIndex(){
+      this.$router.push("/")
+    },
+    addBlog(){
+      this.$router.push("/blog/add")
     }
   },
   //页面创建时即会调用,进而获取用户信息

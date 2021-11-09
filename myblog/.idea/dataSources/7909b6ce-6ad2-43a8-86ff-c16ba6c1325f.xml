@@ -1014,14 +1014,17 @@ SELECT|bookstore.v_user_cart
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
     </column>
-    <column id="310" parent="296" name="status">
+    <column id="310" parent="296" name="created">
       <Position>6</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="311" parent="296" name="created">
-      <Position>7</Position>
       <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
+    </column>
+    <column id="311" parent="296" name="status">
+      <Position>7</Position>
+      <DataType>tinyint|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
     </column>
     <column id="312" parent="296" name="last_login">
       <Position>8</Position>
